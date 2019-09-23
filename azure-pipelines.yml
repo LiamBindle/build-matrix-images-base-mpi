@@ -21,7 +21,7 @@ strategy:
       TAG:        mpich3
     mvapich2:
       BASE_IMAGE: 19.09-$(BASE_LOCKED)
-      MPI_SPEC:   mvapich2@2.0%$(GCC_LOCKED) fabrics=mrail mvapich2@2.1%$(GCC_LOCKED) fabrics=mrail mvapich2@2.2%$(GCC_LOCKED) fabrics=mrail mvapich2@2.3%$(GCC_LOCKED) fabrics=mrail
+      MPI_SPEC:   mvapich2@2.1%$(GCC_LOCKED) fabrics=mrail mvapich2@2.2%$(GCC_LOCKED) fabrics=mrail mvapich2@2.3%$(GCC_LOCKED) fabrics=mrail
       TAG:        mvapich2
 
 # Steps to build images
