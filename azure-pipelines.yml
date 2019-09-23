@@ -37,7 +37,7 @@ steps:
   displayName: Build image
   inputs:
     command: build
-    repository: liambindle/build-matrix-images-base
+    repository: liambindle/build-matrix-images-base-mpi
     tags: $(DATE_TAG)-$(TAG)
     arguments: |
       --build-arg BASE_IMAGE=$(BASE_IMAGE)
@@ -46,7 +46,7 @@ steps:
   displayName: Push image
   inputs:
     containerRegistry: DockerHub
-    repository: liambindle/build-matrix-images-base
+    repository: liambindle/build-matrix-images-base-mpi
     command: push
     tags: |
       $(DATE_TAG)-$(TAG)
