@@ -17,11 +17,11 @@ strategy:
       TAG:        openmpi3
     mpich3:
       BASE_IMAGE: 19.09-$(BASE_LOCKED)
-      MPI_SPEC:   mpich@3.0.4 ^$(GCC_LOCKED) mpich@3.1.4^$(GCC_LOCKED) mpich@3.2.1^$(GCC_LOCKED)
+      MPI_SPEC:   mpich@3.0.4^$(GCC_LOCKED) mpich@3.1.4^$(GCC_LOCKED) mpich@3.2.1^$(GCC_LOCKED)
       TAG:        mpich3
     mvapich2:
       BASE_IMAGE: 19.09-$(BASE_LOCKED)
-      MPI_SPEC:   mvapich2@2.0 ^$(GCC_LOCKED) mvapich2@2.1^$(GCC_LOCKED) mvapich2@2.2^$(GCC_LOCKED) mvapich2@2.3^$(GCC_LOCKED)
+      MPI_SPEC:   mvapich2@2.0^$(GCC_LOCKED) mvapich2@2.1^$(GCC_LOCKED) mvapich2@2.2^$(GCC_LOCKED) mvapich2@2.3^$(GCC_LOCKED)
       TAG:        mvapich2
 
 # Steps to build images
@@ -40,8 +40,8 @@ steps:
     repository: liambindle/build-matrix-images-base-mpi
     tags: $(DATE_TAG)-$(TAG)
     arguments: |
-      --build-arg BASE_IMAGE=$(BASE_IMAGE)
-      --build-arg MPI_SPEC=$(MPI_SPEC) 
+      --build-arg BASE_IMAGE="$(BASE_IMAGE)"
+      --build-arg MPI_SPEC="$(MPI_SPEC)"
 - task: Docker@2
   displayName: Push image
   inputs:
