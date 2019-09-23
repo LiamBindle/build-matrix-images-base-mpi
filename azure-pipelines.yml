@@ -40,7 +40,7 @@ steps:
     repository: liambindle/build-matrix-images-base-mpi
     tags: $(DATE_TAG)-$(TAG)
     arguments: |
-      --build-arg BASE_IMAGE="$(BASE_IMAGE)"
+      --build-arg BASE_IMAGE="liambindle/build-matrix-images-base:$(BASE_IMAGE)"
       --build-arg MPI_SPEC="$(MPI_SPEC)"
 - task: Docker@2
   displayName: Push image
